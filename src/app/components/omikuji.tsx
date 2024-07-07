@@ -9,7 +9,7 @@ import { result } from './result';
 
 export const Omikuji = () => {
       const [randomResult, setRandomResult] = useState<result | null>(null);
-      const numOmikuji: number = 10;
+      const numOmikuji: number = 100;
 
       const handleImageClick = (index: number) => {
             const randomIndex = Math.floor(Math.random() * results.length);
@@ -37,11 +37,11 @@ export const Omikuji = () => {
                   {randomResult !== null && (
                   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                         <div className="bg-white p-8 rounded">
-                              <h1>{ randomResult.result }</h1>
-                              <p>{ randomResult.description }</p>
+                              <h1 className='text-red-600 text-center text-5xl font-bold'>{ randomResult.result }</h1>
+                              <p style={{ whiteSpace: 'pre-line' }}>{ randomResult.description }</p>
                               <button 
                               onClick={() => setRandomResult(null)}
-                              className="mt-4 bg-red-400 text-white px-6 py-2 rounded hover:bg-red-500"
+                              className="mt-4 bg-red-400 text-white px-4 py-2 rounded hover:bg-red-500" 
                               >
                                     閉じる
                               </button>
